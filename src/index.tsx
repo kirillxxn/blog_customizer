@@ -11,14 +11,13 @@ import { ArticleParamsForm } from './components/article-params-form/ArticleParam
 
 import './styles/index.scss';
 import styles from './styles/index.module.scss';
+
 const domNode = document.getElementById('root') as HTMLDivElement;
 const root = createRoot(domNode);
 
 const App = () => {
-	const [articleState, setArticleState] = useState(defaultArticleState);
-	const articleChange = (newArticleState: ArticleStateType) => {
-		setArticleState(newArticleState);
-	};
+	const [articleState, setArticleState] =
+		useState<ArticleStateType>(defaultArticleState);
 
 	return (
 		<div
@@ -32,7 +31,7 @@ const App = () => {
 					'--bg-color': articleState.backgroundColor.value,
 				} as CSSProperties
 			}>
-			<ArticleParamsForm update={articleChange} />
+			<ArticleParamsForm update={setArticleState} />
 			<Article />
 		</div>
 	);

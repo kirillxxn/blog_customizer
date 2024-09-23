@@ -21,38 +21,46 @@ import {
 	fontSizeOptions,
 	fontFamilyOptions,
 } from 'src/constants/articleProps';
+
 type ArticleParamsFormProps = {
 	update: (newArticleState: ArticleStateType) => void;
 };
+
 export const ArticleParamsForm = ({ update }: ArticleParamsFormProps) => {
 	const [modal, setModal] = useState(false);
-	const [articleSettings, setArticleSettings] =
+	const [formValues, setFormValues] =
 		useState<ArticleStateType>(defaultArticleState);
 	const modalRef = useRef<HTMLDivElement | null>(null);
+
 	useOutsideClickClose({
 		isOpen: modal,
 		onChange: setModal,
 		rootRef: modalRef,
 		onClose: () => setModal(false),
 	});
+
 	const changeSubmit = (evt: React.FormEvent) => {
 		evt.preventDefault();
-		update(articleSettings);
+		update(formValues);
 	};
+
 	const openModal = () => {
 		setModal(!modal);
 	};
+
 	const changeInput =
 		(optionType: keyof ArticleStateType) => (data: OptionType) => {
-			setArticleSettings((prevState) => ({
+			setFormValues((prevState) => ({
 				...prevState,
 				[optionType]: data,
 			}));
 		};
+
 	const changeReset = () => {
-		setArticleSettings(defaultArticleState);
+		setFormValues(defaultArticleState);
 		update(defaultArticleState);
 	};
+
 	return (
 		<>
 			<div ref={modalRef}>
@@ -65,29 +73,29 @@ export const ArticleParamsForm = ({ update }: ArticleParamsFormProps) => {
 						</Text>
 						<Select
 							title='Шрифт'
-							selected={articleSettings.fontFamilyOption}
+							selected={formValues.fontFamilyOption}
 							options={fontFamilyOptions}
 							onChange={changeInput('fontFamilyOption')}></Select>
 						<RadioGroup
 							name={'fontSize'}
 							options={fontSizeOptions}
-							selected={articleSettings.fontSizeOption}
+							selected={formValues.fontSizeOption}
 							title={'Размер шрифта'}
 							onChange={changeInput('fontSizeOption')}></RadioGroup>
 						<Select
 							title='Цвет шрифта'
-							selected={articleSettings.fontColor}
+							selected={formValues.fontColor}
 							options={fontColors}
 							onChange={changeInput('fontColor')}></Select>
 						<Separator></Separator>
 						<Select
 							title='Цвет фона'
-							selected={articleSettings.backgroundColor}
+							selected={formValues.backgroundColor}
 							options={backgroundColors}
 							onChange={changeInput('backgroundColor')}></Select>
 						<Select
 							title='Ширина контента'
-							selected={articleSettings.contentWidth}
+							selected={formValues.contentWidth}
 							options={contentWidthArr}
 							onChange={changeInput('contentWidth')}></Select>
 						<div className={styles.bottomContainer}>
