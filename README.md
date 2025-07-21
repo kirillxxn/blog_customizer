@@ -1,54 +1,54 @@
-# Проектная работа: Вёрстка проекта
+# BlogCustomizer 🌤️
 
-## Шаг первый. Изучаем имеющиеся компоненты
+**BlogCustomizer** — это веб-приложение для просмотра и изменения стилей страницы 
 
-[Макет проекта](https://www.figma.com/file/FEeiiGLOsE7ktXbPpBxYoD/Custom-dropdown?type=design&node-id=0%3A1&mode=design&t=eXRJnWC6Xsuw0qR4-1)
+***
 
-Для запуска Storybook выполните:
+## 🚀 Возможности
 
-```
-npm run storybook
-```
+- 📝 Изменение размера и стилей шрифта
+- 📄 Изменение ширины страницы
+- ✏️ Изменение цвета текста и фона
+  
+***
 
-Для запуска линтера для стилей выполните:
+## 🛠️ Технологии
+<p align="left">
+<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/javascript-colored.svg" width="36" height="36" alt="JavaScript" title="JavaScript"/></a>
+<a href="https://developer.mozilla.org/en-US/docs/Glossary/HTML5" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/html5-colored.svg" width="36" height="36" alt="HTML5" title="HTML5"/></a>
+<a href="https://www.w3.org/TR/CSS/#css" target="_blank" rel="noreferrer"><img src="https://cdn-icons-png.flaticon.com/512/919/919831.png" width="36" height="36" alt="CSS3" title="CSS3"/></a>
+<a href="https://webpack.js.org/" target="_blank" rel="noreferrer"><img src="https://raw.githubusercontent.com/danielcranney/readme-generator/main/public/icons/skills/webpack-colored.svg" width="36" height="36" alt="Webpack" title="Webpack"/>
+</p>
 
-```
-npm run stylelint
-```
+***
+## 📦 Установка и запуск
 
-Для запуска линтера выполните:
+Следуйте этим шагам, чтобы запустить проект локально:
 
-```
-npm run lint
-```
+1. **Клонируйте репозиторий:**
 
-Для запуска форматтера выполните:
+   ```bash
+   git clone https://github.com/kirillxxn/BlogCustomizer.git
+   cd BlogCustomizer
+   ```
+2. **Установите зависимости:**
 
-```
-npm run format
-```
+   ```bash
+    npm i
+   ```
+4. **Запустите проект в режиме разработки:**
 
-### Функциональные требования
+   ```bash
+    npm run dev
+   ```
+5. **Откройте приложение в браузере:**
 
-- При нажатии на «стрелку» открывается сайдбар с настройками, при повторном нажатии или клике вне сайдбар закрывается.
-- При изменении настроек в сайдбаре они не применяются сразу.
-- После нажатия на «применить» стили применяются к статье.
-- При нажатии «сбросить» настройки в форме сбрасываются на начальные, которые были при открытии страницы, и стили применяются к статье.
-- Настройки устанавливаются через CSS-переменные, которые уже есть в стилях и установлены в коде в дефолтные значения.
+   ```Перейдите по адресу:
+    http://localhost:8080
+   ```
+***
 
-## Шаг второй. Реализация формы
-
-Продумайте следующие моменты, прежде чем приступать к коду: 
-
-- как будет организована композиция,
-- где вы будете хранить состояние,
-- как передавать данные между формой и страницей.
-
-Затем реализуйте механику открытия-закрытия панели с формой, после этого можно будет временно зафиксировать ее пропсом для удобства реализации.
-
-После этого реализуйте форму из имеющихся компонент согласно макету.
-
-
-## Шаг третий. Обеспечьте передачу данных между формой и страницей
-
-Реализуйте по отдельности сохранение состояния страницы и состояние формы. Обеспечьте применение нового состояния после нажатия на «применить».
+## 📸 Пример работы проекта
+  <div align="center">
+      <img height="100%" width="100%" src="./demoproject/BlogCustomizer.gif"  />
+    </div>
